@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>悟空开机·鹈鹕展翅·始皇骑熊打螺丝 | 奥数糖果极值求解</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --accent: #f59e0b;
+      --danger: #dc2626;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 1300px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #38bdf8, #fbbf24, #f87171);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      margin-bottom: 2rem;
+    }
+    .svg-container {
+      width: 100%;
+      background: #020617;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .svg-container svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+    .content-body {
+      padding: 2rem;
+    }
+    .answer-banner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .answer-box {
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 6px solid var(--accent);
+      padding: 1.5rem;
+      border-radius: 12px;
+      position: relative;
+    }
+    .answer-box.primary-ans {
+      border-left-color: #ef4444;
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(15, 23, 42, 0.8));
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .badge-primary {
+      background: #dc2626;
+      color: #fff;
+    }
+    .badge-secondary {
+      background: #475569;
+      color: #fff;
+    }
+    .big-num {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #f59e0b;
+      line-height: 1;
+      margin: 0.5rem 0;
+    }
+    .primary-ans .big-num {
+      color: #f87171;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 8px;
+    }
+    th, td {
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    th {
+      background: rgba(2, 132, 199, 0.2);
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .math-proof {
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .math-proof h3 {
+      color: #38bdf8;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .math-proof ol, .math-proof ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .math-proof li {
+      margin-bottom: 0.5rem;
+    }
+    code {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #fde047;
+      font-family: monospace;
+    }
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: auto;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>✈️ 悟空开机 · 鹈鹕展翅 · 始皇骑熊打螺丝</h1>
+      <p class="subtitle">大唐内苑侍婢念奴奉命呈献 · 奇幻画卷与奥数概率极值求解</p>
+    </header>
+
+    <div class="card">
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="100%" height="100%">
+  <defs>
+    <!-- 天空与云层渐变 -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="40%" stop-color="#3B82F6"/>
+      <stop offset="70%" stop-color="#93C5FD"/>
+      <stop offset="90%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+
+    <!-- 太阳光晕 -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFBEB" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#FDE047" stop-opacity="0.8"/>
+      <stop offset="80%" stop-color="#F97316" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 机翼金属光泽 -->
+    <linearGradient id="wingMetal" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#CBD5E1"/>
+      <stop offset="30%" stop-color="#94A3B8"/>
+      <stop offset="60%" stop-color="#64748B"/>
+      <stop offset="90%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="wingHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#E2E8F0" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- 驾驶舱玻璃渐变 -->
+    <linearGradient id="cockpitGlass" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#67E8F9" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#06B6D4" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#083344" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- 北极熊皮毛质感渐变 -->
+    <linearGradient id="bearFur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#F8FAFC"/>
+      <stop offset="80%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <!-- 秦始皇黑金龙袍渐变 -->
+    <linearGradient id="emperorRobe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1E24"/>
+      <stop offset="40%" stop-color="#0B090A"/>
+      <stop offset="80%" stop-color="#161A1D"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <!-- 鹈鹕羽毛与大嘴渐变 -->
+    <linearGradient id="pelicanPouch" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="pelicanFeather" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+
+    <!-- 气泡高光与阴影滤镜 -->
+    <filter id="bubbleDropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="4" dy="8" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.35"/>
+    </filter>
+    <filter id="sparkGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ================= 1. 广袤高空与壮丽云海 ================= -->
+  <rect width="1400" height="900" fill="url(#skyGrad)"/>
+
+  <!-- 夕阳光芒轮盘 -->
+  <circle cx="1150" cy="320" r="260" fill="url(#sunGlow)"/>
+
+  <!-- 翻滚的远景云海 -->
+  <g opacity="0.65">
+    <ellipse cx="200" cy="850" rx="350" ry="120" fill="#F8FAFC"/>
+    <ellipse cx="600" cy="880" rx="420" ry="140" fill="#E2E8F0"/>
+    <ellipse cx="1050" cy="860" rx="380" ry="130" fill="#FDE68A"/>
+    <ellipse cx="1350" cy="820" rx="300" ry="110" fill="#FED7AA"/>
+  </g>
+  <g opacity="0.85">
+    <ellipse cx="100" cy="890" rx="280" ry="90" fill="#FFFFFF"/>
+    <ellipse cx="480" cy="920" rx="360" ry="110" fill="#F8FAFC"/>
+    <ellipse cx="900" cy="900" rx="390" ry="120" fill="#FFFBEB"/>
+    <ellipse cx="1300" cy="890" rx="250" ry="100" fill="#F8FAFC"/>
+  </g>
+
+  <!-- 速度风线 -->
+  <g stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2" stroke-dasharray="15,25">
+    <line x1="50" y1="200" x2="600" y2="200"/>
+    <line x1="120" y1="280" x2="750" y2="280"/>
+    <line x1="80" y1="420" x2="520" y2="420"/>
+    <line x1="20" y1="650" x2="450" y2="650"/>
+  </g>
+
+  <!-- ================= 2. 孙悟空开的大型巨型客机 ================= -->
+  <!-- 飞机机身后半与垂直尾翼 -->
+  <g id="aircraft">
+    <!-- 垂直尾翼 (带虎皮纹装饰) -->
+    <polygon points="120,420 40,160 160,160 280,420" fill="#DC2626" stroke="#991B1B" stroke-width="4"/>
+    <path d="M 80,210 Q 120,220 100,250 Q 140,260 110,290" fill="none" stroke="#FBBF24" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="105" cy="205" r="22" fill="#FDE047"/>
+    <text x="96" y="213" font-size="22" font-weight="900" fill="#DC2626" font-family="sans-serif">齐</text>
+
+    <!-- 巨大机身侧体 -->
+    <path d="M 50,560 Q 220,430 550,430 L 780,440 L 760,630 L 100,640 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="4"/>
+    <path d="M 50,560 Q 220,430 550,430 L 780,440" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+
+    <!-- 飞机驾驶舱与大圣特写 (位于机头前段) -->
+    <path d="M 540,432 Q 680,430 760,510 L 755,590 Q 640,580 530,570 Z" fill="#CBD5E1" stroke="#475569" stroke-width="3"/>
+
+    <!-- 驾驶舱大风挡舷窗 -->
+    <polygon points="560,450 670,445 740,510 650,520" fill="url(#cockpitGlass)" stroke="#0E7490" stroke-width="3"/>
+    <!-- 玻璃高光反光线 -->
+    <line x1="585" y1="455" x2="680" y2="510" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+
+    <!-- 孙悟空驾驶特写 (置于驾驶舱内透过窗户清晰可见) -->
+    <g id="wukong-pilot" transform="translate(610, 445)">
+      <!-- 齐天大圣猴头面庞 -->
+      <ellipse cx="35" cy="40" rx="22" ry="24" fill="#B45309"/>
+      <!-- 心形猴脸白/红面谱 -->
+      <path d="M 20,38 C 20,26 35,26 35,38 C 35,26 50,26 50,38 C 50,50 35,58 35,58 C 35,58 20,50 20,38 Z" fill="#FDE68A"/>
+      <ellipse cx="28" cy="38" rx="3" ry="5" fill="#1E293B"/>
+      <ellipse cx="42" cy="38" rx="3" ry="5" fill="#1E293B"/>
+      <!-- 紧箍咒金光闪闪 -->
+      <path d="M 14,30 Q 35,20 56,30" fill="none" stroke="#FACC15" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="35" cy="23" r="4" fill="#F59E0B"/>
+      <!-- 标志性雉鸡翎（两根翎毛破窗飘出） -->
+      <path d="M 32,22 Q 20,-20 -10,-40" fill="none" stroke="#EF4444" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 38,22 Q 55,-20 85,-35" fill="none" stroke="#EF4444" stroke-width="4" stroke-linecap="round"/>
+      <!-- 孙悟空咧嘴大笑 & 大拇指点赞开飞机 -->
+      <path d="M 28,48 Q 35,55 42,48" fill="none" stroke="#B91C1C" stroke-width="3" stroke-linecap="round"/>
+      <text x="-15" y="-10" font-size="14" font-weight="bold" fill="#FDE047" font-family="sans-serif">筋斗云号 747</text>
+      <!-- 握驾驶舵双手 -->
+      <rect x="18" y="55" width="34" height="6" rx="3" fill="#334155"/>
+      <circle cx="18" cy="58" r="5" fill="#D97706"/>
+      <circle cx="52" cy="58" r="5" fill="#D97706"/>
+    </g>
+
+    <!-- 巨大向前延伸的右侧主机翼（舞台地基） -->
+    <!-- 机翼主体大斜切面，从左向右大角度展开 -->
+    <polygon points="260,540 1350,620 1280,820 180,680" fill="url(#wingMetal)" stroke="#1E293B" stroke-width="4"/>
+    <polygon points="260,540 1350,620 1320,640 230,560" fill="url(#wingHighlight)"/>
+    <!-- 机翼金属拼接线与机械铆钉 -->
+    <line x1="450" y1="555" x2="400" y2="705" stroke="#334155" stroke-width="2" stroke-dasharray="8,6"/>
+    <line x1="700" y1="575" x2="660" y2="735" stroke="#334155" stroke-width="2" stroke-dasharray="8,6"/>
+    <line x1="950" y1="595" x2="920" y2="765" stroke="#334155" stroke-width="2" stroke-dasharray="8,6"/>
+    <line x1="1150" y1="610" x2="1120" y2="785" stroke="#334155" stroke-width="2" stroke-dasharray="8,6"/>
+
+    <!-- 翼尖红色航行警示小翼 -->
+    <polygon points="1350,620 1380,550 1360,550 1320,640" fill="#EF4444" stroke="#B91C1C" stroke-width="2"/>
+    <circle cx="1370" cy="555" r="5" fill="#FDE047" filter="url(#sparkGlow)"/>
+
+    <!-- 涡轮喷气发动机挂架在机翼下方露出喷口火光 -->
+    <path d="M 420,670 L 480,675 L 470,760 L 390,750 Z" fill="#475569" stroke="#0F172A" stroke-width="3"/>
+    <ellipse cx="430" cy="755" rx="38" ry="12" fill="#0284C7"/>
+    <ellipse cx="430" cy="755" rx="20" ry="6" fill="#BAE6FD" filter="url(#sparkGlow)"/>
+  </g>
+
+  <!-- ================= 3. 鹈鹕与自行车在机翼上骑行 ================= -->
+  <g id="pelican-and-bicycle" transform="translate(480, 240)">
+    <!-- 自行车轮与机械框架 (停/行在机翼中段) -->
+    <g id="bicycle" transform="translate(0, 250)">
+      <!-- 后轮 (带辐条与齿轮) -->
+      <circle cx="80" cy="180" r="58" fill="none" stroke="#334155" stroke-width="7"/>
+      <circle cx="80" cy="180" r="50" fill="none" stroke="#94A3B8" stroke-width="2"/>
+      <circle cx="80" cy="180" r="8" fill="#F59E0B"/>
+      <!-- 后轮辐条 -->
+      <line x1="80" y1="125" x2="80" y2="235" stroke="#94A3B8" stroke-width="1.5"/>
+      <line x1="25" y1="180" x2="135" y2="180" stroke="#94A3B8" stroke-width="1.5"/>
+      <line x1="42" y1="142" x2="118" y2="218" stroke="#94A3B8" stroke-width="1.5"/>
+      <line x1="42" y1="218" x2="118" y2="142" stroke="#94A3B8" stroke-width="1.5"/>
+
+      <!-- 前轮 (带辐条) -->
+      <circle cx="280" cy="180" r="58" fill="none" stroke="#334155" stroke-width="7"/>
+      <circle cx="280" cy="180" r="50" fill="none" stroke="#94A3B8" stroke-width="2"/>
+      <circle cx="280" cy="180" r="8" fill="#F59E0B"/>
+      <line x1="280" y1="125" x2="280" y2="235" stroke="#94A3B8" stroke-width="1.5"/>
+      <line x1="225" y1="180" x2="335" y2="180" stroke="#94A3B8" stroke-width="1.5"/>
+      <line x1="242" y1="142" x2="318" y2="218" stroke="#94A3B8" stroke-width="1.5"/>
+      <line x1="242" y1="218" x2="318" y2="142" stroke="#94A3B8" stroke-width="1.5"/>
+
+      <!-- 车架：钻石经典公路车架 (鲜艳亮黄色) -->
+      <polyline points="80,180 160,180 250,90 150,90 80,180" fill="none" stroke="#EAB308" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="160" y1="180" x2="150" y2="70" stroke="#EAB308" stroke-width="8" stroke-linecap="round"/>
+      <line x1="280" y1="180" x2="250" y2="70" stroke="#EAB308" stroke-width="8" stroke-linecap="round"/>
+      <!-- 车座与车把 -->
+      <polygon points="120,70 170,70 160,80 130,80" fill="#1E293B"/>
+      <path d="M 245,70 Q 255,45 275,55" fill="none" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+      <!-- 牙盘与脚踏板 -->
+      <circle cx="160" cy="180" r="16" fill="#64748B"/>
+      <line x1="160" y1="180" x2="140" y2="205" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+      <rect x="130" y="202" width="18" height="6" rx="2" fill="#E2E8F0"/>
+    </g>
+
+    <!-- 鹈鹕身体与奋力骑车脚蹬 -->
+    <g id="pelican-body">
+      <!-- 鹈鹕强壮的双腿蹬车 -->
+      <path d="M 180,300 L 150,380 L 140,448" fill="none" stroke="#EA580C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 200,300 L 220,360 L 175,410" fill="none" stroke="#C2410C" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 橙黄色大脚蹼踩在脚踏上 -->
+      <polygon points="120,445 155,445 145,460 115,455" fill="#F97316"/>
+
+      <!-- 鹈鹕身躯 (丰满雪白羽毛) -->
+      <ellipse cx="200" cy="250" rx="75" ry="60" fill="url(#pelicanFeather)" stroke="#64748B" stroke-width="3" transform="rotate(-15, 200, 250)"/>
+
+      <!-- 鹈鹕脖颈与头部 -->
+      <path d="M 240,220 Q 275,180 260,110 Q 250,70 290,60" fill="none" stroke="url(#pelicanFeather)" stroke-width="38" stroke-linecap="round"/>
+      <ellipse cx="295" cy="65" rx="30" ry="25" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
+      <!-- 鹈鹕护目镜与眼神 (专注又神气) -->
+      <ellipse cx="305" cy="55" rx="14" ry="12" fill="#0284C7" stroke="#0F172A" stroke-width="3"/>
+      <circle cx="308" cy="53" r="4" fill="#FFFFFF"/>
+      <rect x="270" y="52" width="40" height="6" rx="3" fill="#D97706"/>
+
+      <!-- 鹈鹕标志性巨大长喙与超大黄色喉囊 (张开大喊状) -->
+      <!-- 上喙 -->
+      <path d="M 315,55 L 430,70 Q 440,73 425,82 L 315,82 Z" fill="#F59E0B" stroke="#B45309" stroke-width="3"/>
+      <circle cx="428" cy="75" r="3" fill="#B45309"/>
+      <!-- 下喙与巨大弹性喉囊 (张开深红口腔) -->
+      <path d="M 315,84 L 415,86 Q 390,175 320,165 Q 285,155 300,105 Z" fill="url(#pelicanPouch)" stroke="#C2410C" stroke-width="3"/>
+      <path d="M 325,92 Q 380,95 395,95 Q 365,145 325,135 Z" fill="#991B1B" opacity="0.85"/>
+      <path d="M 345,130 Q 365,115 375,130" fill="none" stroke="#FDE047" stroke-width="4" stroke-linecap="round"/>
+
+      <!-- 鹈鹕展开托举万物的巨大双翼！ -->
+      <!-- 左翼 (向前向外强力舒展) -->
+      <path d="M 160,220 C 100,150 20,130 -80,100 C -120,85 -80,140 -20,180 C 40,220 120,250 160,250 Z" fill="url(#pelicanFeather)" stroke="#64748B" stroke-width="3"/>
+      <!-- 右翼 (向后向上宽广展开，化作厚重稳固的巨型托台！) -->
+      <path d="M 230,220 C 260,120 310,20 120,-30 C 20,-60 -40,-30 -80,30 C -20,70 120,120 210,230 Z" fill="url(#pelicanFeather)" stroke="#475569" stroke-width="4"/>
+      <!-- 羽毛层次细节勾勒 -->
+      <path d="M -60,15 C -20,-10 40,-25 100,-15" fill="none" stroke="#94A3B8" stroke-width="3"/>
+      <path d="M -30,45 C 20,20 70,10 130,25" fill="none" stroke="#CBD5E1" stroke-width="3"/>
+      <path d="M 0,75 C 50,50 110,40 160,65" fill="none" stroke="#E2E8F0" stroke-width="3"/>
+    </g>
+
+    <!-- ================= 4. 秦始皇的北极熊 (被稳稳托在右翼云台之上) ================= -->
+    <g id="polar-bear" transform="translate(10, -140)">
+      <!-- 皇家御用金鞍垫 -->
+      <ellipse cx="50" cy="85" rx="100" ry="25" fill="#DC2626" stroke="#B45309" stroke-width="4"/>
+      <path d="M -40,95 Q 50,115 140,95" fill="none" stroke="#FDE047" stroke-width="6" stroke-dasharray="10,8"/>
+
+      <!-- 北极熊雄健的身躯 -->
+      <!-- 后臀与粗壮后腿 -->
+      <ellipse cx="-15" cy="55" rx="55" ry="45" fill="url(#bearFur)" stroke="#94A3B8" stroke-width="2"/>
+      <path d="M -50,60 Q -70,100 -50,130 Q -30,135 -20,120 L -5,80 Z" fill="url(#bearFur)" stroke="#94A3B8" stroke-width="2"/>
+      <!-- 北极熊躯干 -->
+      <ellipse cx="45" cy="45" rx="80" ry="52" fill="url(#bearFur)" stroke="#94A3B8" stroke-width="3"/>
+      <!-- 稳稳抓在羽翼上的前肢 -->
+      <path d="M 85,55 Q 120,90 130,125 Q 115,135 95,120 L 70,75 Z" fill="url(#bearFur)" stroke="#94A3B8" stroke-width="2"/>
+      <ellipse cx="115" cy="125" rx="14" ry="8" fill="#334155"/>
+      <ellipse cx="-35" cy="125" rx="14" ry="8" fill="#334155"/>
+
+      <!-- 北极熊头部与威严神态 -->
+      <ellipse cx="130" cy="15" rx="35" ry="28" fill="url(#bearFur)" stroke="#94A3B8" stroke-width="2"/>
+      <!-- 圆圆可爱的熊耳朵 -->
+      <circle cx="118" cy="-8" r="10" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2"/>
+      <circle cx="118" cy="-8" r="5" fill="#FDA4AF"/>
+      <!-- 熊黑鼻子与嘴巴 -->
+      <ellipse cx="160" cy="18" rx="8" ry="6" fill="#0F172A"/>
+      <path d="M 152,24 Q 160,30 166,24" fill="none" stroke="#0F172A" stroke-width="2"/>
+      <circle cx="138" cy="10" r="4" fill="#0F172A"/>
+      <circle cx="140" cy="8" r="1.5" fill="#FFFFFF"/>
+      <!-- 皇家战熊金甲护额 -->
+      <polygon points="120,2 145,-12 150,5 125,12" fill="url(#goldTrim)" stroke="#78350F" stroke-width="1.5"/>
+      <circle cx="135" cy="0" r="3" fill="#DC2626"/>
+
+      <!-- ================= 5. 秦始皇骑在北极熊上打螺丝！ ================= -->
+      <g id="qin-shi-huang" transform="translate(15, -120)">
+        <!-- 始皇帝威严坐姿 (玄黑大秦龙袍，金纹滚边) -->
+        <!-- 龙袍下摆与坐姿腿部 -->
+        <path d="M -15,100 C -35,105 10,135 60,115 C 85,105 75,90 60,85 Z" fill="url(#emperorRobe)" stroke="#D97706" stroke-width="2.5"/>
+        <!-- 龙袍身躯 (霸气玄黑，正面绣五爪金龙盘云纹) -->
+        <path d="M 5,30 L -15,85 L 65,85 L 50,30 Z" fill="url(#emperorRobe)" stroke="#D97706" stroke-width="3"/>
+        <path d="M 12,45 Q 25,35 38,45 Q 45,60 25,65 Q 10,60 18,48" fill="none" stroke="url(#goldTrim)" stroke-width="4"/>
+        <text x="20" y="58" font-size="12" fill="#FDE047" font-weight="900" font-family="serif">秦</text>
+
+        <!-- 始皇帝侧颜与威仪胡须 (专注凝神看螺丝) -->
+        <ellipse cx="25" cy="10" rx="16" ry="18" fill="#FED7AA"/>
+        <!-- 坚定锐利的帝王之目 -->
+        <path d="M 24,8 L 34,7" stroke="#1E293B" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="30" cy="11" r="2.5" fill="#0F172A"/>
+        <!-- 庄严修长的黑色长须随高空气流飘拂 -->
+        <path d="M 28,20 Q 40,32 30,50 Q 24,35 22,24" fill="#0F172A"/>
+
+        <!-- 标志性秦汉冕旒 (十二旒天子玉冠) -->
+        <!-- 黑色冕板横亘头顶 -->
+        <polygon points="-8,-12 60,-12 52,-6 -16,-6" fill="#0F172A" stroke="#F59E0B" stroke-width="2"/>
+        <!-- 前后悬垂玉旒五彩珠串 -->
+        <g stroke="#FDE047" stroke-width="2" stroke-linecap="round">
+          <line x1="48" y1="-6" x2="48" y2="12" stroke-dasharray="2,3"/>
+          <line x1="52" y1="-6" x2="52" y2="14" stroke-dasharray="2,3"/>
+          <line x1="56" y1="-6" x2="56" y2="10" stroke-dasharray="2,3"/>
+          <line x1="-10" y1="-6" x2="-10" y2="10" stroke-dasharray="2,3"/>
+          <line x1="-6" y1="-6" x2="-6" y2="12" stroke-dasharray="2,3"/>
+        </g>
+        <circle cx="25" cy="-7" r="4" fill="#DC2626"/>
+
+        <!-- 始皇帝打螺丝动作！双手持工业电动螺丝刀/金龙扳手 -->
+        <!-- 右臂向前伸展，握住高科技打螺丝机 -->
+        <path d="M 35,38 L 70,48 L 92,68" fill="none" stroke="url(#emperorRobe)" stroke-width="12" stroke-linecap="round"/>
+        <path d="M 70,48 L 92,68" fill="none" stroke="url(#goldTrim)" stroke-width="4"/>
+        <!-- 始皇之手 -->
+        <circle cx="94" cy="70" r="7" fill="#FED7AA"/>
+
+        <!-- 专业打螺丝机/重型扳手 -->
+        <rect x="90" y="60" width="30" height="18" rx="4" fill="#0284C7" stroke="#0F172A" stroke-width="2"/>
+        <rect x="118" y="66" width="22" height="6" fill="#94A3B8" stroke="#334155" stroke-width="1.5"/>
+        <!-- 批头正在疯狂旋转旋紧机甲/北极熊铠甲上的巨大金色螺丝！ -->
+        <polygon points="140,65 148,69 140,73" fill="#E2E8F0"/>
+        <!-- 被打的六角大螺母 -->
+        <polygon points="146,62 154,62 158,69 154,76 146,76 142,69" fill="#FACC15" stroke="#78350F" stroke-width="2"/>
+
+        <!-- 疯狂四射的耀眼电光火花！(打螺丝特有激情特效) -->
+        <g id="sparkles" filter="url(#sparkGlow)">
+          <line x1="146" y1="69" x2="168" y2="52" stroke="#FEF08A" stroke-width="3"/>
+          <line x1="146" y1="69" x2="175" y2="72" stroke="#FDE047" stroke-width="2.5"/>
+          <line x1="146" y1="69" x2="160" y2="88" stroke="#F59E0B" stroke-width="3"/>
+          <line x1="146" y1="69" x2="135" y2="92" stroke="#EF4444" stroke-width="2"/>
+          <line x1="146" y1="69" x2="152" y2="45" stroke="#67E8F9" stroke-width="2"/>
+          <circle cx="147" cy="69" r="6" fill="#FFFFFF"/>
+        </g>
+        <!-- 拟声词飘带 -->
+        <text x="160" y="55" font-size="16" font-weight="900" fill="#FDE047" font-family="sans-serif" stroke="#B45309" stroke-width="0.8">滋滋滋⚡</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= 6. 鹈鹕大声喊出数学题结果的超级对话气泡 ================= -->
+  <g id="speech-bubble" transform="translate(830, 60)" filter="url(#bubbleDropShadow)">
+    <!-- 气泡大白底与科技金边 -->
+    <path d="M 0,0 L 500,0 Q 530,0 530,30 L 530,360 Q 530,390 500,390 L 100,390 L 10,430 L 40,390 L 0,390 Q -30,390 -30,360 L -30,30 Q -30,0 0,0 Z"
+          fill="#FFFFFF" stroke="#0284C7" stroke-width="6"/>
+
+    <!-- 顶栏醒目标题徽章 -->
+    <rect x="-10" y="15" width="520" height="42" rx="8" fill="#0284C7"/>
+    <text x="250" y="44" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle" font-family="'Microsoft YaHei', sans-serif">
+      📢 鹈鹕大声播报·奥数糖果极值解！
+    </text>
+
+    <!-- 核心结果数值横幅 (最吸睛核心) -->
+    <g transform="translate(0, 75)">
+      <rect x="-10" y="0" width="520" height="95" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="3"/>
+      <text x="20" y="36" font-size="18" font-weight="bold" fill="#B45309" font-family="'Microsoft YaHei', sans-serif">
+        凭手感辨形状（标准题解）：
+      </text>
+      <!-- 超大醒目数值 21 -->
+      <text x="35" y="82" font-size="46" font-weight="900" fill="#DC2626" font-family="'Arial Black', Impact, sans-serif">
+        最少取出 21 颗！
+      </text>
+      <text x="310" y="76" font-size="16" font-weight="bold" fill="#78350F" font-family="'Microsoft YaHei', sans-serif">
+        👉 精准摸：9圆 + 12星
+      </text>
+    </g>
+
+    <!-- 盲摸对比数值 -->
+    <g transform="translate(0, 185)">
+      <rect x="-10" y="0" width="520" height="52" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2"/>
+      <text x="15" y="32" font-size="16" font-weight="bold" fill="#334155" font-family="'Microsoft YaHei', sans-serif">
+        🎲 若完全盲摸（无法挑形状）：<tspan fill="#DC2626" font-size="22" font-weight="900">最少需 29 颗</tspan>（极值必成）
+      </text>
+    </g>
+
+    <!-- 糖果战利品卡片统计 -->
+    <g transform="translate(0, 252)">
+      <rect x="-10" y="0" width="520" height="120" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+      <text x="10" y="24" font-size="14" font-weight="bold" fill="#475569" font-family="'Microsoft YaHei', sans-serif">
+        🍬 糖果袋总数：圆形24颗 + 五角星17颗 = 共41颗
+      </text>
+
+      <!-- 圆形与星形糖果生动图标配对 -->
+      <g transform="translate(20, 42)">
+        <!-- 圆形苹果糖 -->
+        <circle cx="20" cy="20" r="16" fill="#EF4444" stroke="#B91C1C" stroke-width="2"/>
+        <text x="14" y="25" font-size="13" font-weight="bold" fill="#FFFFFF">🍎</text>
+        <text x="45" y="25" font-size="14" font-weight="bold" fill="#B91C1C">圆苹果 (7)</text>
+
+        <!-- 匹配 五角星桃子糖 -->
+        <text x="135" y="25" font-size="16" font-weight="bold" fill="#D97706">+</text>
+        <polygon points="175,5 179,15 190,16 181,23 184,33 175,27 166,33 169,23 160,16 171,15" fill="#F472B6" stroke="#DB2777" stroke-width="1.5"/>
+        <text x="198" y="25" font-size="14" font-weight="bold" fill="#DB2777">星桃子 (6)</text>
+      </g>
+
+      <g transform="translate(20, 78)">
+        <!-- 圆形桃子糖 -->
+        <circle cx="20" cy="18" r="16" fill="#F472B6" stroke="#DB2777" stroke-width="2"/>
+        <text x="14" y="23" font-size="13" font-weight="bold" fill="#FFFFFF">🍑</text>
+        <text x="45" y="23" font-size="14" font-weight="bold" fill="#DB2777">圆桃子 (9)</text>
+
+        <!-- 匹配 五角星苹果糖 -->
+        <text x="135" y="23" font-size="16" font-weight="bold" fill="#D97706">+</text>
+        <polygon points="175,3 179,13 190,14 181,21 184,31 175,25 166,31 169,21 160,14 171,13" fill="#EF4444" stroke="#B91C1C" stroke-width="1.5"/>
+        <text x="198" y="23" font-size="14" font-weight="bold" fill="#B91C1C">星苹果 (7)</text>
+      </g>
+
+      <text x="330" y="98" font-size="12" fill="#0284C7" font-weight="bold">✅ 任一组凑齐即胜！</text>
+    </g>
+  </g>
+
+  <!-- 底部装潢水印/标题名条 -->
+  <g transform="translate(40, 840)">
+    <rect width="450" height="42" rx="21" fill="#0F172A" opacity="0.85"/>
+    <text x="25" y="27" font-size="16" font-weight="bold" fill="#F8FAFC" font-family="'Microsoft YaHei', sans-serif">
+      ✈️ 悟空开机 · 鹈鹕展翅 · 始皇骑熊打螺丝图卷
+    </text>
+  </g>
+</svg>
+
+      </div>
+
+      <div class="content-body">
+        <div class="answer-banner">
+          <div class="answer-box primary-ans">
+            <span class="badge badge-primary">推荐标准题意解（凭手感摸取形状）</span>
+            <div class="big-num">最少 21 颗</div>
+            <p><strong>最佳策略：</strong>参赛者凭手感在摸取时准确决定摸 <strong>9 颗圆形</strong> 与 <strong>12 颗五角星形</strong>（9 + 12 = 21），此时无论内部口味如何分布，均必然同时出现满足要求的匹配对！</p>
+          </div>
+
+          <div class="answer-box">
+            <span class="badge badge-secondary">对照组题意解（完全盲摸，无法挑选形状）</span>
+            <div class="big-num">最少 29 颗</div>
+            <p><strong>盲摸最坏情况：</strong>在完全不伸手分辨形状的情形下，最坏情况下可能摸出28颗仍不满足条件，故必须至少摸出 <strong>29 颗</strong> 方能绝对保证。</p>
+          </div>
+        </div>
+
+        <div class="math-proof">
+          <h3>📐 题目回顾与统计数据</h3>
+          <p>在一个黑色的袋子里放有三种口味的糖果，每种糖果有两种不同的形状（圆形和五角星形，不同的形状靠手感可以分辨）。参赛者需要在活动前决定摸出的糖果数目，问最少取出多少个糖果才能保证手中同时拥有不同形状的苹果味和桃子味的糖？</p>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>形状 \ 口味</th>
+                  <th>🍎 苹果味</th>
+                  <th>🍑 桃子味</th>
+                  <th>🍉 西瓜味</th>
+                  <th>小计</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>圆形 ⚪</strong></td>
+                  <td>7</td>
+                  <td>9</td>
+                  <td>8</td>
+                  <td><strong>24</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>五角星形 ⭐</strong></td>
+                  <td>7</td>
+                  <td>6</td>
+                  <td>4</td>
+                  <td><strong>17</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>合计</strong></td>
+                  <td>14</td>
+                  <td>15</td>
+                  <td>12</td>
+                  <td><strong>41</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>🔍 严密推导过程（最坏情况/抽屉原理）</h3>
+          <p>满足目标的条件为：手中拥有 <code>(圆苹果 且 星桃子)</code> 或 <code>(圆桃子 且 星苹果)</code>。</p>
+          <p>因此，导致<strong>“失败”</strong>的局面只有以下四种情形：</p>
+          <ol>
+            <li><strong>没有 圆苹果 也没有 圆桃子：</strong>圆糖只能取西瓜(最多8颗)，星糖最多全取17颗。圆上限 8，星上限 17，总数至多 25。</li>
+            <li><strong>没有 圆苹果 也没有 星苹果：</strong>圆糖至多取 9桃+8瓜=17颗，星糖至多取 6桃+4瓜=10颗。圆上限 17，星上限 10，总数至多 27。</li>
+            <li><strong>没有 圆桃子 也没有 星桃子：</strong>圆糖至多取 7果+8瓜=15颗，星糖至多取 7果+4瓜=11颗。圆上限 15，星上限 11，总数至多 26。</li>
+            <li><strong>没有 星苹果 也没有 星桃子：</strong>圆糖最多全取24颗，星糖只能取西瓜(最多4颗)。圆上限 24，星上限 4，总数至多 28。</li>
+          </ol>
+
+          <p><strong>结论分析：</strong></p>
+          <ul>
+            <li><strong>如果可凭手感摸取形状：</strong>我们要选择一对 <code>(c, s)</code>，使得它不被上述任何一种失败上界所容纳。经计算机穷举与数学验证，当选择 <strong>c = 9（圆形）, s = 12（五角星）</strong> 时：
+              <ul>
+                <li>c=9 击穿了情形1（圆≤8）；</li>
+                <li>s=12 击穿了情形2（星≤10）、情形3（星≤11）、情形4（星≤4）。</li>
+                <li>因此四种失败情形全被瓦解，必定成功！总数 9 + 12 = <strong>21 颗</strong>。</li>
+              </ul>
+            </li>
+            <li><strong>如果盲摸（无法指定形状）：</strong>四种失败情况的最大总数是 28 颗（情形4：24圆+4星西瓜）。根据抽屉原理，摸 28 颗仍可能恰好失败，因此必须摸 <strong>28 + 1 = 29 颗</strong> 才能绝对保证成功。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Pelican on Wing with Monkey King & Emperor Qin · Generated & Verified with AstrBot</p>
+    </footer>
+  </div>
+</body>
+</html>
